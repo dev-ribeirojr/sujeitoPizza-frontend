@@ -1,5 +1,5 @@
 "use client"
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 import { Form } from "@/components/ui/form";
 import { LabelIcon } from "@/components/ui/label";
@@ -25,9 +25,12 @@ export function FormLogin() {
   const { register, handleSubmit, formState: { errors } } = useForm<SignInProps>({
     resolver: zodResolver(schemaLogin)
   })
+  const [loading, setLoading] = useState<boolean>(false)
 
   async function handleLogin(data: SignInProps) {
+    setLoading(true);
     await signIn(data);
+    setLoading(false)
   }
 
   return (
@@ -47,12 +50,13 @@ export function FormLogin() {
           placeholder="Digite sua senha"
           register={register}
           name="password"
+          autoComplete="off"
         />
       </LabelIcon>
       {errors.password && <p>{errors.password.message}</p>}
       <Button
         type="submit"
-        loading={false}
+        loading={loading}
       >
         Acessar Conta
       </Button>
