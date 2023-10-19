@@ -18,7 +18,7 @@ type UserProps = {
   token: string
 }
 
-type SignInProps = {
+export type SignInProps = {
   email: string,
   password: string
 }
