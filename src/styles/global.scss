@@ -37,6 +37,11 @@ select,
 button {
   font: 400 1rem sans-serif;
 }
+body,
+html,
+:root {
+  height: 100%;
+}
 
 @media (max-width: 720px) {
   html {
