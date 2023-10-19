@@ -1,6 +1,7 @@
 import { ButtonHTMLAttributes, ReactNode } from 'react';
 import styles from './button.module.scss';
 import { icons } from '@/config/icons';
+
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   loading?: boolean,
   children: ReactNode
