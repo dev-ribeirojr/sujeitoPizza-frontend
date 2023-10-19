@@ -1,10 +1,13 @@
 "use client"
 import { createContext, ReactNode, useState } from "react";
+import { destroyCookie } from "nookies";
+import Router from "next/router";
 
 type AuthContextData = {
   user: UserProps | undefined
   isAuthenticated: boolean,
   signIn: (credential: SignInProps) => Promise<void>
+  signOut: () => void
 }
 
 type UserProps = {
@@ -28,6 +31,17 @@ type AuthProviderProps = {
 
 export const AuthContext = createContext({} as AuthContextData)
 
+export function signOut() {
+  try {
+    destroyCookie(undefined, "@nextauth.token");
+    Router.push('/')
+  } catch {
+
+    console.log("erro ao deslogar")
+
+  }
+}
+
 export function AuthProvider({ children }: AuthProviderProps) {
 
   const [user, setUser] = useState<UserProps>();
@@ -42,7 +56,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
         isAuthenticated: !!user,
         user,
         signIn,
-
+        signOut
       }}
     >
       {children}
