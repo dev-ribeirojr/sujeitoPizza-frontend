@@ -4,6 +4,8 @@ import { Inter } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
 
+import { AuthProvider } from "@/contexts/AuthContext"
+
 export const metadata: Metadata = {
   title: 'Sujeito Pizza',
   description: 'sistema pizzaria',
@@ -16,7 +18,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <AuthProvider>
+          {children}
+        </AuthProvider>
+      </body>
     </html>
   )
 }
