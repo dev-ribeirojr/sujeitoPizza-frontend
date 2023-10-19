@@ -3,6 +3,7 @@ import { LabelIcon } from "@/components/ui/label";
 
 import { icons } from "../../../config/icons"
 import { InputText } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 
 export function FormLogin() {
 
@@ -14,6 +15,12 @@ export function FormLogin() {
       <LabelIcon icon={icons.password}>
         <InputText type="password" placeholder="Digite sua senha" />
       </LabelIcon>
+      <Button
+        type="submit"
+        loading={false}
+      >
+        Acessar Conta
+      </Button>
     </Form>
   )
 }
