@@ -57,6 +57,8 @@ export function FormLogin() {
       <Button
         type="submit"
         loading={loading}
+        color="#FFF"
+        background="#ff3f4b"
       >
         Acessar Conta
       </Button>

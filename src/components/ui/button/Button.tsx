@@ -5,12 +5,18 @@ import { icons } from '@/config/icons';
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   loading?: boolean,
   children: ReactNode
+  background: '#3fffa3' | '#ff3f4b',
+  color: "#FFF" | "#101026"
 }
 
-export function Button({ children, loading, ...rest }: ButtonProps) {
+export function Button({ children, loading, color, background, ...rest }: ButtonProps) {
   return (
     <button
       className={styles.button}
+      style={{
+        background: background,
+        color: color,
+      }}
       disabled={loading}
       {...rest}
     >

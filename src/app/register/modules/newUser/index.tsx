@@ -72,6 +72,8 @@ export default function NewUser() {
         <Button
           type="submit"
           loading={loading}
+          background='#3fffa3'
+          color='#101026'
         >
           Cadastrar
         </Button>

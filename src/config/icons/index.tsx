@@ -10,7 +10,7 @@ import {
 } from "react-icons/fa";
 import { MdLogout, MdAssignmentAdd } from 'react-icons/md';
 import { PiSignInBold } from 'react-icons/pi';
-import { BiSolidAddToQueue } from 'react-icons/bi';
+import { BiSolidAddToQueue, BiSolidCategoryAlt } from 'react-icons/bi';
 
 export const icons = {
   email: <FaEnvelope />,
@@ -24,5 +24,6 @@ export const icons = {
   catalog: <FaBookOpen />,
   box: <FaBoxOpen />,
   addCategory: <MdAssignmentAdd />,
-  add: <BiSolidAddToQueue />
+  add: <BiSolidAddToQueue />,
+  category: <BiSolidCategoryAlt />
 }
