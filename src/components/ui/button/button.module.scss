@@ -40,3 +40,41 @@
     transform: rotate(360deg);
   }
 }
+
+// --- ButtonBorderTop ---//
+
+.buttonBorderTop {
+  width: 100%;
+  max-width: 300px;
+  background-color: var(--dark-900);
+  color: var(--gray-100);
+  font-weight: 600;
+  border-radius: 0.3rem;
+  overflow: hidden;
+
+  .borderTop {
+    height: 6px;
+    background-color: var(--gray-100);
+  }
+
+  &:hover {
+    box-shadow: 0 0 10px #ffffff28;
+    .borderTop {
+      background-color: var(--green-900);
+    }
+    span {
+      color: var(--green-900);
+    }
+  }
+}
+.areaChildrenButtonBorderTop {
+  padding: 0.3rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  span {
+    font-size: 1.2rem;
+  }
+}
