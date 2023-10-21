@@ -6,6 +6,11 @@
   color: var(--white);
   border-radius: 0.2rem;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
   transition: filter 0.2s;
 
   &[disabled] {
@@ -21,6 +26,9 @@
 
   span {
     font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 

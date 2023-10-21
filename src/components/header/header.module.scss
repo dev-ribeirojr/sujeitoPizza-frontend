@@ -1,0 +1,14 @@
+.header {
+  border-right: 1px solid var(--gray-100);
+  padding: 1rem;
+  width: 250px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  img {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}

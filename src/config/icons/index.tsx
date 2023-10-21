@@ -1,4 +1,13 @@
-import { FaEye, FaEyeSlash, FaEnvelope, FaUser, FaUserPlus, FaSpinner } from "react-icons/fa";
+import {
+  FaBoxOpen,
+  FaBookOpen,
+  FaEye,
+  FaEyeSlash,
+  FaEnvelope,
+  FaUser,
+  FaUserPlus,
+  FaSpinner,
+} from "react-icons/fa";
 import { MdLogout } from 'react-icons/md';
 import { PiSignInBold } from 'react-icons/pi';
 
@@ -10,5 +19,7 @@ export const icons = {
   newUser: <FaUserPlus />,
   logOut: <MdLogout />,
   signIn: <PiSignInBold />,
-  loading: <FaSpinner />
+  loading: <FaSpinner />,
+  catalog: <FaBookOpen />,
+  box: <FaBoxOpen />
 }
