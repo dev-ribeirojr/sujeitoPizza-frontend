@@ -13,7 +13,11 @@ export function Header() {
         <Nav />
       </div>
 
-      <Button>
+      <Button
+        type='button'
+        background='#ff3f4b'
+        color='#FFF'
+      >
         <span>
           {icons.logOut}
         </span>

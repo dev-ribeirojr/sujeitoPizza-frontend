@@ -3,6 +3,7 @@ import { Header } from "@/components/header";
 import { Container } from "@/components/ui/container";
 import { HeaderRegister } from "./modules/headerRegister";
 import NewUser from './modules/newUser';
+import { NewCategory } from './modules/newCategory';
 
 export default function Register() {
 
@@ -14,6 +15,9 @@ export default function Register() {
         <HeaderRegister />
         {false &&
           <NewUser />
+        }
+        {true &&
+          < NewCategory />
         }
       </main>
     </Container>
