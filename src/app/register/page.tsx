@@ -10,8 +10,11 @@ export default function Register() {
     <Container>
       <Header />
       <main className={styles.container}>
+        <div className={styles.banner}></div>
         <HeaderRegister />
-        <NewUser />
+        {false &&
+          <NewUser />
+        }
       </main>
     </Container>
   )
