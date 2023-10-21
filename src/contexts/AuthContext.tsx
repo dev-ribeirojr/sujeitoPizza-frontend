@@ -5,6 +5,7 @@ import { createContext, ReactNode, useState } from "react";
 import { destroyCookie, setCookie, parseCookies } from "nookies";
 import { api } from "@/services/apiClient";
 import { toast } from "react-toastify";
+import { cookiesKey } from "@/constants/cookies";
 
 
 type AuthContextData = {
@@ -44,7 +45,7 @@ export const AuthContext = createContext({} as AuthContextData)
 
 export function signOut() {
   try {
-    destroyCookie(undefined, "@nextauth.token");
+    destroyCookie(undefined, cookiesKey);
     Router.push('/');
   } catch {
     console.log("erro ao deslogar");
@@ -69,7 +70,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
       const { id, name, token, role, updated_at, created_at, status } = response.data
 
       // console.log(response.data)
-      setCookie(undefined, '@nextauth.token', token, {
+      setCookie(undefined, cookiesKey, token, {
         maxAge: 60 * 60 * 24 * 30, // expira em 1 mês
         path: "/" //quais caminhos terão acesso aos cookies
       })
@@ -96,7 +97,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
       const { id, token, role, updated_at, created_at, status } = response.data;
 
-      setCookie(undefined, '@nextauth.token', token, {
+      setCookie(undefined, cookiesKey, token, {
         maxAge: 60 * 60 * 24 * 30, // expira em 1 mês
         path: "/" //quais caminhos terão acesso aos cookies
       })
