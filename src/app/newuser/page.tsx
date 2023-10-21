@@ -25,12 +25,12 @@ export default function NewUser() {
     resolver: zodResolver(schemaNewUser)
   })
 
-  const { newUser } = useContext(AuthContext);
+  const { createNewUser } = useContext(AuthContext);
   const [loading, setLoading] = useState<boolean>(false)
 
   async function handleNewUser(data: NewUserProps) {
     setLoading(true)
-    await newUser(data)
+    await createNewUser(data)
     setLoading(false)
   }
 
