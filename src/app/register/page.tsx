@@ -4,6 +4,7 @@ import { Container } from "@/components/ui/container";
 import { HeaderRegister } from "./modules/headerRegister";
 import NewUser from './modules/newUser';
 import { NewCategory } from './modules/newCategory';
+import { NewProduct } from './modules/newProduct';
 
 export default function Register() {
 
@@ -16,8 +17,11 @@ export default function Register() {
         {false &&
           <NewUser />
         }
-        {true &&
+        {false &&
           < NewCategory />
+        }
+        {true &&
+          <NewProduct />
         }
       </main>
     </Container>

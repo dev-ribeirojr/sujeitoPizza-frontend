@@ -49,7 +49,7 @@ export function signOut() {
     destroyCookie(undefined, cookiesKey);
     Router.push('/');
   } catch {
-    console.log("erro ao deslogar");
+    toast.error("Erro ao desogar usuário")
   }
 }
 
@@ -75,7 +75,6 @@ export function AuthProvider({ children }: AuthProviderProps) {
           setUser({ id, name, email, role, updated_at, created_at, status })
         } catch (error) {
 
-          console.log("Erro ao buscar usuário")
           signOut()
         }
       }
@@ -96,7 +95,6 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
       const { id, name, token, role, updated_at, created_at, status } = response.data
 
-      // console.log(response.data)
       setCookie(undefined, cookiesKey, token, {
         maxAge: 60 * 60 * 24 * 30, // expira em 1 mês
         path: "/" //quais caminhos terão acesso aos cookies
@@ -110,7 +108,6 @@ export function AuthProvider({ children }: AuthProviderProps) {
       router.push("/dashboard")
 
     } catch (error) {
-      console.log("Error", error)
       toast.error("Erro ao fazer login!")
     }
   }
@@ -130,7 +127,6 @@ export function AuthProvider({ children }: AuthProviderProps) {
       toast.success("Cadastro finalizado com sucesso!");
 
     } catch (error) {
-      console.log(error)
       toast.error("Erro ao cadastrar novo usuário!")
     }
   }
