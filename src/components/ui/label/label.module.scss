@@ -1,7 +1,6 @@
-.label {
+@mixin label {
   display: flex;
   border: 1px solid var(--gray-100);
-  height: 35px;
   border-radius: 0.2rem;
   width: 100%;
   cursor: pointer;
@@ -21,4 +20,13 @@
       color: var(--green-900);
     }
   }
+}
+
+.label {
+  height: 35px;
+  @include label();
+}
+.labelTextArea {
+  @include label();
+  height: 80px;
 }
