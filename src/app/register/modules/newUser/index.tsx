@@ -19,7 +19,7 @@ const schemaNewUser = z.object({
   password: z.string().min(4, "Senha precisa ter pelo menos 4 caracteres")
 })
 
-export default function NewUser() {
+export function NewUser() {
 
   const { register, handleSubmit, formState: { errors } } = useForm<NewUserProps>({
     resolver: zodResolver(schemaNewUser)
