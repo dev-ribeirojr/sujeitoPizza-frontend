@@ -4,13 +4,23 @@ import {
   FaEye,
   FaEyeSlash,
   FaEnvelope,
+  FaMoneyBillAlt,
   FaUser,
   FaUserPlus,
   FaSpinner,
 } from "react-icons/fa";
-import { MdLogout, MdAssignmentAdd } from 'react-icons/md';
+
+import {
+  MdLogout,
+  MdAssignmentAdd,
+  MdDescription,
+  MdDriveFileRenameOutline,
+  MdClose
+} from 'react-icons/md';
+
 import { PiSignInBold } from 'react-icons/pi';
-import { BiSolidAddToQueue, BiSolidCategoryAlt } from 'react-icons/bi';
+import { BiSolidAddToQueue, BiSolidCategoryAlt, BiSolidImageAdd } from 'react-icons/bi';
+import { IoMdArrowDropdown } from 'react-icons/io'
 
 export const icons = {
   email: <FaEnvelope />,
@@ -25,5 +35,12 @@ export const icons = {
   box: <FaBoxOpen />,
   addCategory: <MdAssignmentAdd />,
   add: <BiSolidAddToQueue />,
-  category: <BiSolidCategoryAlt />
+  category: <BiSolidCategoryAlt />,
+  money: <FaMoneyBillAlt />,
+  description: <MdDescription />,
+  name: <MdDriveFileRenameOutline />,
+  addImage: <BiSolidImageAdd />,
+  close: <MdClose />,
+  arrowSelect: <IoMdArrowDropdown />
+
 }
